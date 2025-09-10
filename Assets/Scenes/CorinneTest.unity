@@ -137,6 +137,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
+--- !u!4 &857394189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9060257034590225925, guid: cf49b65adcd86d242bb6139181603b71, type: 3}
+  m_PrefabInstance: {fileID: 5469591466154947364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &923431032
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targeting
   player: {fileID: 857394184}
-  moveSpeed: 3
-  distance: 2
+  centerObject: {fileID: 857394189}
+  radius: 5
+  speed: 1
 --- !u!1001 &5469591466154947364
 PrefabInstance:
   m_ObjectHideFlags: 0
