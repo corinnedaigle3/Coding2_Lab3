@@ -19,7 +19,7 @@ public class Targeting : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        radius = Random.Range(3, 7);
+        radius = Random.Range(4, 7);
         Debug.Log(radius);
         player = GameObject.FindWithTag("Player");
     }
@@ -58,6 +58,6 @@ public class Targeting : MonoBehaviour
         //transform.rotation = Quaternion.AngleAxis(angle, Vector3.right);
 
         // Adjust the rotation to make the object face the player correctly
-        transform.rotation = Quaternion.Euler(0, 0, angle -90);
+        transform.rotation = Quaternion.Euler(0, 0, angle -90) * Quaternion.Euler(0, angle -90, 0);
     }
 }
