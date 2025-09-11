@@ -9,7 +9,7 @@ public class Targeting : MonoBehaviour
     public Transform centerObject;
 
     // Radius of the circle
-    public float radius = 2f;
+    float radius;
 
     // Speed of orbit
     public float speed = 1f;       
@@ -19,6 +19,8 @@ public class Targeting : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        radius = Random.Range(3, 7);
+        Debug.Log(radius);
         player = GameObject.FindWithTag("Player");
     }
 
@@ -35,8 +37,11 @@ public class Targeting : MonoBehaviour
 
     public void Rotation()
     {
+        // Speed depends on radius
+        float orbitSpeed = speed * radius / 2;
+
         // Calculate the new position
-        angle += speed * Time.deltaTime;
+        angle += orbitSpeed * Time.deltaTime;
         float x = centerObject.position.x + Mathf.Cos(angle) * radius;
         float y = centerObject.position.z + Mathf.Sin(angle) * radius;
 
